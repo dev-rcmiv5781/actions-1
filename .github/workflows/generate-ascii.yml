@@ -13,11 +13,19 @@ jobs:
         - name: List of Repository Files
           run: ls -ltra
 
+        - name: Debug - List Files Before Script Execution
+          run: |
+            echo "--- Listing files in current directory before chmod ---"
+            ls -al .
+            echo "--- Listing files in .github/workflows directory ---" # Just in case
+            ls -al .github/workflows/
+            echo "--- Listing files recursively from root ---"
+            ls -R
+
         - name: Executing Shell Script
           run: |
-            # Ensure the script is executable
+            # IMPORTANT: Confirm 'ascii-script.sh' is in the output of the 'ls -al .' above
             chmod +x ascii-script.sh
-            # Now execute the script
             ./ascii-script.sh
 
         
