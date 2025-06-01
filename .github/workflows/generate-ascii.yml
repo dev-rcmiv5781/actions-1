@@ -26,6 +26,6 @@ jobs:
           run: |
             # IMPORTANT: Confirm 'ascii-script.sh' is in the output of the 'ls -al .' above
             chmod +x ascii-script.sh
-            .github/workflows/ascii-script.sh
+            ./ascii-script.sh
 
         
